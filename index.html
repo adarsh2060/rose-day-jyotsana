@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Rose Day ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .message {
+      background: rgba(255, 255, 255, 0.15);
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 700px;
+      border-radius: 25px;
+      backdrop-filter: blur(6px);
+    }
+    .message h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .message p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .rose {
+      font-size: 2rem;
+      animation: float 3s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; }
+    }
+    .petal {
+      position: fixed;
+      top: -10vh;
+      font-size: 24px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: #fff;
+      color: #333;
+      padding: 30px;
+      max-width: 400px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease;
+    }
+    .popup-content h2 { color: #e63946; }
+    .popup-content button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      border: none;
+      background: #e63946;
+      color: #fff;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>For My Rose 🌹</h2>
+      <p>
+        Jyotsana, you are the most beautiful part of my life.
+        This Rose Day is just a small excuse to remind you how deeply I love you.
+        Thank you for choosing me, every single day.
+      </p>
+      <button onclick="closePopup()">I love you ❤️</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="rose">🌹</div>
+    <h1>Happy Rose Day, Jyotsana ❤️</h1>
+    <p>You make my life beautiful, just like a rose 💖</p>
+  </header>
+
+  <section class="gallery">
+    <!-- Our Memories -->
+    <img src="jyotsana-adarsh-1.jpg" alt="Adarsh and Jyotsana – Memory 1">
+    <img src="jyotsana-adarsh-2.jpg" alt="Adarsh and Jyotsana – Memory 2">
+  </section>
+
+  <section class="message">
+    <h2>For You, Jyotsana ❤️</h2>
+    <p>
+      On this Rose Day, I just want you to know how incredibly special you are to me, Jyotsana.
+      Your smile brightens my darkest days, and your presence makes everything feel right.
+      Every moment with you is a memory I cherish, and every heartbeat reminds me how lucky I am to have you.
+      Thank you for being my rose in every season of my life. 🌹
+    </p>
+  </section>
+
+  <section class="message">
+    <h2>Forever Us ♾️</h2>
+    <p>
+      Jyotsana, no matter where life takes us, I want you to know this:
+      I choose you today, tomorrow, and always.
+      Through every season, every smile, and every storm — it will always be us.
+      Forever yours,
+      <br><strong>Adarsh ❤️</strong>
+    </p>
+  </section>
+
+  <footer>
+    Made with endless love by <strong>Adarsh</strong> 💕
+  </footer>
+
+  <script>
+    const petals = 25;
+    for (let i = 0; i < petals; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.innerText = '🌹';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.fontSize = 16 + Math.random() * 20 + 'px';
+      document.body.appendChild(petal);
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
